@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2632fc1c.css",
+    "main.js": "/static/js/main.46dc8a56.js",
+    "static/media/goldbergAria.mp3": "/static/media/goldbergAria.88ea6f816ad1bc5fb861.mp3",
+    "index.html": "/index.html",
+    "main.2632fc1c.css.map": "/static/css/main.2632fc1c.css.map",
+    "main.46dc8a56.js.map": "/static/js/main.46dc8a56.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2632fc1c.css",
+    "static/js/main.46dc8a56.js"
+  ]
+}

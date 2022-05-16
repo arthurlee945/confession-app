@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background-color:#f7f7f7;
+  color:#080808;
+  font-family: 'Roboto Mono', monospace;
+}
+.container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  -webkit-tap-highlight-color:transparent;
+  .titlePage{
+    position:absolute;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: #f7f7f7;
+    .title{
+      opacity:0;
+      font-size: 3rem;
+      font-weight:700;
+      letter-spacing:0.3rem;
+      transition:150ms;
+      user-select: none;
+      text-transform: uppercase;
+      cursor:pointer;
+      animation: title 1000ms;
+      animation-fill-mode: forwards;
+      animation-delay:500ms;
+      @keyframes title {
+        from{opacity:0}
+        to{opacity:1}
+      } 
+      &:hover{
+        letter-spacing:0.5rem;
+      }
+      &:active{
+        letter-spacing:0.1rem;
+        color:#5e5e5e;
+      }
+    }
+  }
+  .navBar{
+    user-select: none;
+    .addConfessionBtn{
+      position:absolute;
+      top:2rem;
+      right:2rem;
+      background: transparent;
+      border:none;
+      cursor:pointer;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.1rem;
+      transition:letter-spacing 150ms, opacity 150ms;
+      &:hover{
+        letter-spacing:0.2rem;
+      }
+      &:active{
+        letter-spacing:0;
+        opacity:0.4;
+      }
+    }
+    >i{
+      position:absolute;
+      top:2rem;
+      left:2rem;
+      font-size: 1.25rem;
+      cursor: pointer;
+      &:hover{
+        animation: spin 250ms;
+        animation-iteration-count: infinite;
+        @keyframes spin {
+          from{transform:rotate(0deg)}
+          25%{transform:rotate(30deg)}
+          75%{transform:rotate(-30deg)}
+          to{transform:rotate(0deg)}
+        }
+      }
+      &:active{
+        animation: rotateWhole 500ms;
+        @keyframes rotateWhole {
+          from{transform:rotate(0)}
+          to{transform:rotate(360deg)}
+        }
+      }
+    }
+  }
+  .confessionContainer{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    min-width: 1200px;
+    height:75%;
+    min-height:750px; 
+    line-height:4rem;
+    overflow-y: auto;
+    .confession{
+      user-select: none;
+      transition:150ms;
+      cursor:pointer;
+      &:hover{
+        font-size:2.1rem;
+        color:#505050;
+      }
+      &:active{
+        color:#080808;
+      }
+    }
+    .confessionForm{
+      display:flex;
+      flex-direction:column;
+      align-items: center;
+      justify-content: center;
+      width:100%;
+      .textbox{
+        background-color:transparent;
+        width:100%;
+        height: 3rem;
+        text-align: center;
+        font-size: 2rem;
+        border-radius:0.5rem;
+        transition:box-shadow 200ms;
+        box-shadow: inset 0 0 4px #0808085d;
+        border:none;
+        &:focus{
+          outline:none;
+          box-shadow: inset 0 0 5px #08080848, 0 3px 5px #0808086b;
+        }
+      }
+      .submitBtn{
+        width:auto;
+        margin-top:2rem;
+        font-size:1.25rem;
+        font-weight: 600;
+        background-color:transparent;
+        cursor:pointer;
+        letter-spacing: 0.1rem;
+        transition:150ms;
+        border:1px solid;
+        padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 0 #b1b1b1;
+        &:hover{
+          box-shadow: 0 5px 0 #b1b1b1;
+          transform: translateY(-1px);
+          color:#505050;
+        }
+        &:active{
+          box-shadow: 0 2px 0 #b1b1b1;
+          transform: translateY(2px);
+          color:#080808;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+  .container{
+    .confessionContainer{
+      width: 95%;
+      min-width: auto;
+    }
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 768px){
+  .container{
+    .titlePage{
+      .title{
+        font-size: 2.5rem;
+        &:hover{
+          letter-spacing:0.3rem;
+        }
+      }
+    }
+    .navBar{
+      .addConfessionBtn{
+        font-size: 1.25rem;
+        letter-spacing: 0.05rem;
+        &:hover{
+          letter-spacing:0.05rem;
+        }
+        &:active{
+          letter-spacing:0;
+        }
+      }
+      >i{
+        &:hover{
+          animation: spin 250ms;
+          animation-iteration-count: 0;
+        }
+        &:active{
+          animation: rotateWhole 500ms;
+          @keyframes rotateWhole {
+            from{transform:rotate(0)}
+            to{transform:rotate(360deg)}
+          }
+        }
+      }
+    }
+    .confessionContainer{
+      width: 95%;
+      min-width: auto;
+      .confession{
+        font-size:1.75rem;
+        &:hover{
+          font-size:1.75rem;
+          color:#080808;
+        }
+        &:active{
+          font-size:1.85rem;
+          color:#505050;
+        }
+      }
+      .confessionForm{
+        .textbox{
+          font-size: 1.75rem;
+        }
+        .submitBtn{
+          font-size:1.35rem;
+          &:hover{
+            box-shadow: 0 4px 0 #b1b1b1;
+            transform: translateY(0);
+            color:#080808;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 480px){
+  .container{
+    .titlePage{
+      .title{
+        font-size: 2.5rem;
+        &:hover{
+          letter-spacing:0.3rem;
+        }
+      }
+    }
+    .navBar{
+      .addConfessionBtn{
+        font-size: 1.25rem;
+        letter-spacing: 0.05rem;
+        &:hover{
+          letter-spacing:0.05rem;
+        }
+        &:active{
+          letter-spacing:0;
+        }
+      }
+      >i{
+        &:hover{
+          animation: spin 250ms;
+          animation-iteration-count: 0;
+        }
+        &:active{
+          animation: rotateWhole 500ms;
+          @keyframes rotateWhole {
+            from{transform:rotate(0)}
+            to{transform:rotate(360deg)}
+          }
+        }
+      }
+    }
+    .confessionContainer{
+      width: 95%;
+      min-width: auto;
+      .confession{
+        font-size:1.5rem;
+        &:hover{
+          font-size:1.5rem;
+          color:#080808;
+        }
+        &:active{
+          font-size:1.55rem;
+          color:#505050;
+        }
+      }
+      .confessionForm{
+        .textbox{
+          height: 2.5rem;
+          font-size: 1.5rem;
+        }
+        .submitBtn{
+          font-size:1.35rem;
+          letter-spacing: 0.2rem;
+          &:hover{
+            box-shadow: 0 4px 0 #b1b1b1;
+            transform: translateY(0);
+            color:#080808;
+          }
+        }
+      }
+    }
+  }
+}
